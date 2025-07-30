@@ -4,17 +4,9 @@
 
 ## Setup Instructions
 
-### 1. Clone the Repository
 
-```bash
-git clone git@github.com:sarvamai/sarvam-nim.git
-```
 
-1. Replace the ```build_and_upload.sh``` file in ```sarvam-nim/tools``` with the corresponding file in this repo
-
-2. Replace  the ```.env-build-asr``` in ```sarvam-nim/tools/examples``` with the corresponding file in this repo
-
-### 2. Docker Commands
+### 1. Docker Commands
 ```bash
 docker pull appsprodacr.azurecr.io/trt-llm-whisper:latest
 docker run --rm -it \
@@ -23,16 +15,13 @@ docker run --rm -it \
   --ulimit stack=67108864 \
   --gpus device=0 \
   -v <path to sarvam nim>:/inference \
-  -v <path to store trt engine>:/models \
+  -v <path to  trt engine>:/models \
   -e HUGGING_FACE_HUB_TOKEN=<your_hf_token> \
   --env-file <path to sarvam-nim>/tools/examples/.env-build-asr \
   appsprodacr.azurecr.io/trt-llm-whisper:latest
 ```
-### 3. Building the TRT Engines
-```bash
-cd /inference/tools && bash build_and_upload.sh
-```
-### 4. Running inference
+
+### 2. Running inference
 ```bash
 cd /app/tensorrt_llm/examples/models/core/whisper
 ```
