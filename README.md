@@ -10,9 +10,9 @@
 git clone git@github.com:sarvamai/sarvam-nim.git
 ```
 
-1. Replace the ```build_and_upload.sh``` file in sarvam-nim/tools with the corresponding file in this repo
+1. Replace the ```build_and_upload.sh``` file in ```sarvam-nim/tools``` with the corresponding file in this repo
 
-2. Replace  the ```.env-build-asr``` in sarvam-nim/tools/examples with the corresponding file in this repo
+2. Replace  the ```.env-build-asr``` in ```sarvam-nim/tools/examples``` with the corresponding file in this repo
 
 ### 2. Docker Commands
 ```bash
