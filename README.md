@@ -27,9 +27,9 @@ cd /app/tensorrt_llm/examples/models/core/whisper
 ```
 **Single Audio Inference**
 ```bash
-python3 run.py --name single_wav_test --engine_dir /models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu --input_file <path-to-audio>.wav
+python3 run.py --name single_wav_test --engine_dir /models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu --input_file <path-to-audio>.wav --results_dir <path>
 ```
 **On a hf dataset**
 ```bash
-python3 run.py --engine_dir  /models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu  --dataset hf-internal-testing/librispeech_asr_dummy --enable_warmup --name librispeech_dummy_large_v3
+python3 run.py --engine_dir  /models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu  --dataset hf-internal-testing/librispeech_asr_dummy --enable_warmup --name librispeech_dummy_large_v3 --results_dir <path>
 ```
