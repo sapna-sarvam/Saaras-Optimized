@@ -20,7 +20,7 @@ docker run --rm -it \
   -v <path to sarvam nim>:/inference \
   -v <path to store trt engine>:/models \
   -e HUGGING_FACE_HUB_TOKEN=<your_hf_token> \
-  --env-file sarvam-nim/tools/examples/.env-build-asr \
+  --env-file <path to sarvam-nim>/tools/examples/.env-build-asr \
   appsprodacr.azurecr.io/trt-llm-whisper:latest
 ```
 ### 3. Building the TRT Engines
