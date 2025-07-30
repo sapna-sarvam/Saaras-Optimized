@@ -15,7 +15,7 @@ docker run --rm -it \
   --ulimit stack=67108864 \
   --gpus device=0 \
  -v <path to output-dir>:/inference
-  -v <path to  trt engine>:/models \
+  -v <path to the parent dir of trt_engine>:/models \
   appsprodacr.azurecr.io/trt-llm-whisper:latest
 ```
 
@@ -25,7 +25,7 @@ cd /app/tensorrt_llm/examples/models/core/whisper
 ```
 **Single Audio Inference**
 ```bash
-python3 run.py --name single_wav_test --engine_dir /models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu --input_file <path-to-audio>.wav --results_dir <path>
+python3 run.py --name single_wav_test --engine_dir /models/trt_engine/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu --input_file <path-to-audio>.wav --results_dir <path>
 ```
 **On a hf dataset**
 ```bash
