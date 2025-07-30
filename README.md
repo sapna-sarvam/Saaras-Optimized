@@ -9,6 +9,10 @@
 ```bash
 git clone git@github.com:sarvamai/sarvam-nim.git
 ```
+
+Replace the ```build_and_upload.sh``` file in sarvam-nim/tools with the corresponding file in this repo
+Replace  the ```.env-build-asr``` in sarvam-nim/tools/examples with the corresponding file in this repo
+
 ### 2. Docker Commands
 ```bash
 docker pull appsprodacr.azurecr.io/trt-llm-whisper:latest
