@@ -1,12 +1,6 @@
 
 # TensorRT-LLM Whisper Setup and Usage Guide
-## Prerequisites
 
-- Docker installed with NVIDIA container runtime support
-- NVIDIA GPU with appropriate drivers
-- Access to Azure Container Registry (appsprodacr.azurecr.io)
-- Hugging Face account and token
-- Git with SSH access to the repository
 
 ## Setup Instructions
 
