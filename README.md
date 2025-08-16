@@ -21,6 +21,8 @@ docker run --rm -it \
 
 ### 2. Running inference
 Pl have ```whisper_utils.py``` and ```assets``` in the same dir as ```run.py```
+
+
 **Single Audio Inference**
 ```bash
 python3 run.py --name single_wav_test --engine_dir /models/trt_engine/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu --input_file <path-to-audio>.wav --results_dir <path>
