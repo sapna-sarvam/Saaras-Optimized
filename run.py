@@ -23,7 +23,6 @@ from pathlib import Path
 import numpy as np
 import torch
 from datasets import load_dataset
-from tokenizer import get_tokenizer
 from torch.utils.data import DataLoader
 from whisper.normalizers import EnglishTextNormalizer
 from whisper_utils import (log_mel_spectrogram, store_transcripts,
@@ -347,19 +346,19 @@ class WhisperTRTLLM(object):
         self.n_mels = encoder_config['n_mels']
         self.num_languages = encoder_config['num_languages']
         is_multilingual = (decoder_config['vocab_size'] >= 51865)
-        if is_multilingual:
-            tokenizer_name = "multilingual"
-            assert (Path(assets_dir) / "multilingual.tiktoken").exists(
-            ), "multilingual.tiktoken file is not existed in assets_dir"
-        else:
-            tokenizer_name = "gpt2"
-            assert (Path(assets_dir) / "gpt2.tiktoken").exists(
-            ), "gpt2.tiktoken file is not existed in assets_dir"
+        #if is_multilingual:
+        #    tokenizer_name = "multilingual"
+        #    assert (Path(assets_dir) / "multilingual.tiktoken").exists(
+        #    ), "multilingual.tiktoken file is not existed in assets_dir"
+        #else:
+        #    tokenizer_name = "gpt2"
+        #    assert (Path(assets_dir) / "gpt2.tiktoken").exists(
+        #    ), "gpt2.tiktoken file is not existed in assets_dir"
         #self.tokenizer = get_tokenizer(name=tokenizer_name,
         #                               num_languages=self.num_languages,
         #                               tokenizer_dir=assets_dir)
         #self.tokenizer = AutoTokenizer.from_pretrained("/inference/1-gpu")
-        self.tokenizer=WhisperTokenizer.from_pretrained("/models/trt_engines/saaras-raft-wp20-base-v2v-v2-chunk_5-main-bs72/1-gpu")
+        self.tokenizer=WhisperTokenizer.from_pretrained(args.engine_dir)
         self.eot_id = self.tokenizer.encode(
             "<|endoftext|>",
             allowed_special=self.tokenizer.special_tokens_map)[0]
