@@ -18,6 +18,11 @@ docker run --rm -it \
   -v <path to the parent dir of trt_engine>:/models \
   appsprodacr.azurecr.io/trt-llm-whisper:latest
 ```
+**Building a docker image**
+```bash
+docker build -t trt-llm-whisper:latest .
+```
+
 
 ### 2. Running inference
 Pl have ```whisper_utils.py``` and ```assets``` in the same dir as ```run.py```
